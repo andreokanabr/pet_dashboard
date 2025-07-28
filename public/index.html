@@ -1,0 +1,115 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Dashboard de Cotação de Ração</title>
+    <link rel="stylesheet" href="style.css">
+    </head>
+<body>
+    <div class="container">
+        <h1>Dashboard de Cotação de Ração</h1>
+
+        <div class="form-section">
+            <h2>Registrar Estabelecimento</h2>
+            <form id="establishmentForm">
+                <label for="establishmentName">Nome do Estabelecimento:</label>
+                <input type="text" id="establishmentName" required>
+
+                <label for="establishmentContact">Contato (Telefone/Email):</label>
+                <input type="text" id="establishmentContact">
+
+                <button type="submit">Adicionar Estabelecimento</button>
+            </form>
+        </div>
+
+        <div class="dashboard-section">
+            <h2>Estabelecimentos Registrados</h2>
+            <table id="establishmentTable">
+                <thead>
+                    <tr>
+                        <th>Nome</th>
+                        <th>Contato</th>
+                        <th>Ações</th>
+                    </tr>
+                </thead>
+                <tbody>
+                    </tbody>
+            </table>
+        </div>
+
+        <div class="form-section">
+            <h2>Registrar Nova Cotação de Ração</h2>
+            <form id="quotationForm">
+                <label for="feedName">Nome da Ração:</label>
+                <input type="text" id="feedName" required>
+
+                <label for="price">Valor (R$):</label>
+                <input type="number" id="price" step="0.01" required>
+
+                <label for="date">Data da Cotação:</label>
+                <input type="date" id="date" required>
+
+                <label for="selectedEstablishment">Estabelecimento:</label>
+                <select id="selectedEstablishment" required>
+                    <option value="">Selecione um estabelecimento</option>
+                    </select>
+
+                <button type="submit">Adicionar Cotação</button>
+            </form>
+        </div>
+
+        <div class="dashboard-section">
+            <h2>Histórico de Cotações</h2>
+
+            <div class="filter-sort-section">
+                <label for="searchFeed">Buscar por Ração:</label>
+                <input type="text" id="searchFeed" placeholder="Nome da Ração">
+
+                <label for="searchDate">Buscar por Data:</label>
+                <input type="date" id="searchDate">
+
+                <label for="sortOrder">Ordenar Valores:</label>
+                <select id="sortOrder">
+                    <option value="none">Nenhum</option>
+                    <option value="asc">Menor para Maior</option>
+                    <option value="desc">Maior para Menor</option>
+                </select>
+
+                <button id="applyFilters">Aplicar Filtros</button>
+                <button id="clearFilters">Limpar Filtros</button>
+            </div>
+
+            <div class="charts-container">
+                <div class="chart-box">
+                    <h3>Valores por Data</h3>
+                    <canvas id="priceByDateChart"></canvas>
+                </div>
+                <div class="chart-box">
+                    <h3>Valores por Ração</h3>
+                    <canvas id="priceByFeedChart"></canvas>
+                </div>
+            </div>
+
+            <h3>Lista de Cotações</h3>
+            <table id="quotationTable">
+                <thead>
+                    <tr>
+                        <th>Ração</th>
+                        <th>Valor (R$)</th>
+                        <th>Data</th>
+                        <th>Estabelecimento</th>
+                        <th>Contato Estabelecimento</th>
+                        <th>Ações</th>
+                    </tr>
+                </thead>
+                <tbody>
+                    </tbody>
+            </table>
+        </div>
+    </div>
+
+    <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
+    <script src="script.js"></script>
+</body>
+</html>

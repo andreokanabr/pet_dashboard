@@ -1,0 +1,32 @@
+[
+  {
+    "id": 1,
+    "name": "Pet Shop Dog House",
+    "contact": "3093-5363"
+  },
+  {
+    "id": 2,
+    "name": "Agro Pec 3Marias",
+    "contact": "3024-5748"
+  },
+  {
+    "id": 3,
+    "name": "Avia. Siriema",
+    "contact": "3272-2830"
+  },
+  {
+    "id": 4,
+    "name": "Agro Pet Colonia",
+    "contact": "3273-7160"
+  },
+  {
+    "id": 5,
+    "name": "Casa do lavrador",
+    "contact": "3372-0201"
+  },
+  {
+    "id": 6,
+    "name": "Avia. Dom Inacio",
+    "contact": "3027-6989"
+  }
+]
